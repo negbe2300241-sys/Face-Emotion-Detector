@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Emotion Detection System</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+            color: #e4e4e4;
+        }
+
+        h1, h2, h3 {
+            color: #00e6ff;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 2rem;
+            text-shadow: 0 0 10px #00e6ff;
+        }
+
+        center h2 {
+            margin-bottom: 30px;
+            font-weight: 400;
+            color: #9fdcff;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: rgba(30, 40, 50, 0.9);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.15);
+        }
+
+        td {
+            padding: 15px;
+            vertical-align: top;
+        }
+
+        ul, ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #c9d1d9;
+        }
+
+        button {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 12px 25px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+
+        input[type="file"] {
+            border: 2px dashed #00e6ff;
+            border-radius: 8px;
+            padding: 10px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.05);
+            color: #b3e9ff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="file"]:hover {
+            background: rgba(0, 230, 255, 0.1);
+        }
+
+        hr {
+            margin: 40px 0;
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #00e6ff, transparent);
+            opacity: 0.5;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 255, 255, 0.1);
+            width: 80%;
+        }
+
+        table strong {
+            color: #00e6ff;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+                display: block;
+                overflow-x: auto;
+            }
+            td {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        ::selection {
+            background: #00e6ff;
+            color: #111;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>🧠 AI Facial Emotion Recognition System</h1>
+        <h2>Detect Emotions from Facial Expressions</h2>
+    </center>
+
+    <table width="95%" align="center" cellpadding="10">
+        <tr>
+            <!-- LEFT PANEL -->
+            <td width="60%" valign="top">
+                <h3>📤 Upload Image for Analysis</h3>
+                <form action="/predict" method="post" enctype="multipart/form-data">
+                    <table border="0" cellpadding="10" width="100%">
+                        <tr>
+                            <td>
+                                <strong>Select Image File:</strong><br><br>
+                                <input type="file" id="image" name="image" accept="image/*" required>
+                                <br><br>
+                                <button type="submit">🎯 ANALYZE FACIAL EMOTIONS</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+                <br>
+                <table border="0" cellpadding="10" width="100%">
+                    <tr>
+                        <td>
+                            <h3>📋 Supported Image Formats</h3>
+                            <ul>
+                                <li>JPEG (.jpg, .jpeg)</li>
+                                <li>PNG (.png)</li>
+                                <li>WebP (.webp)</li>
+                                <li>BMP (.bmp)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+
+            <!-- RIGHT PANEL -->
+            <td width="40%" valign="top">
+                <table border="0" cellpadding="15" width="100%">
+                    <tr>
+                        <td>
+                            <h3>🎭 Detectable Emotions</h3>
+                            <table border="1" width="100%" cellpadding="8" style="border-color: #00e6ff;">
+                                <tr><td><strong>😠 Angry</strong></td><td>Frowning, tense expression</td></tr>
+                                <tr><td><strong>🤢 Disgust</strong></td><td>Nose wrinkle, upper lip raise</td></tr>
+                                <tr><td><strong>😨 Fear</strong></td><td>Wide eyes, eyebrows raised</td></tr>
+                                <tr><td><strong>😄 Happy</strong></td><td>Smiling, cheek raise</td></tr>
+                                <tr><td><strong>😐 Neutral</strong></td><td>Relaxed, no strong emotion</td></tr>
+                                <tr><td><strong>😢 Sad</strong></td><td>Frowning, inner eyebrows raised</td></tr>
+                                <tr><td><strong>😲 Surprise</strong></td><td>Wide eyes, jaw drop</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <table border="0" cellpadding="15" width="100%">
+                    <tr>
+                        <td>
+                            <h3>⚡ How It Works</h3>
+                            <ol>
+                                <li><strong>Upload:</strong> Select an image with a clear face</li>
+                                <li><strong>Detection:</strong> AI locates all faces</li>
+                                <li><strong>Analysis:</strong> CNN analyzes expressions</li>
+                                <li><strong>Results:</strong> Emotions & confidence displayed</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <table border="0" cellpadding="15" width="100%">
+                    <tr>
+                        <td>
+                            <h3>💡 Tips for Best Results</h3>
+                            <ul>
+                                <li>Use well-lit, high-quality images</li>
+                                <li>Frontal face angles work best</li>
+                                <li>Avoid blurry or dark pictures</li>
+                                <li>Ensure full face visibility</li>
+                                <li>Multiple faces will be analyzed</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+    <center>
+        <div class="footer">
+            <h3>🔬 Technology Stack</h3>
+            <p>
+                <strong>Backend:</strong> Python Flask + PyTorch + OpenCV<br>
+                <strong>AI Model:</strong> Pretrained CNN (ResNet18)<br>
+                <strong>Face Detection:</strong> Haar Cascade Classifier<br>
+                <strong>Dataset:</strong> FER2013 Facial Expression Dataset
+            </p>
+            <p><em>⚙️ Powered by Deep Learning & Computer Vision</em></p>
+        </div>
+    </center>
+</body>
+</html>

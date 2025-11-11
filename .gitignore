@@ -1,0 +1,123 @@
+# ============================================
+# 📦 PYTHON & FLASK PROJECT .gitignore
+# For Emotion Detection Web App
+# ============================================
+
+# ---- Python cache / build files ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pdb
+
+# ---- Distribution / packaging ----
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ---- Installer logs ----
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ---- Unit tests / coverage ----
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+htmlcov/
+
+# ---- Flask app specific ----
+instance/
+uploads/
+!uploads/.gitkeep
+logs/
+*.log
+*.db
+*.db-journal
+temp_*
+temp_images/
+*.tmp
+
+# ---- Environment variables ----
+.env
+.env.*
+.venv
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ---- Model / ML cache ----
+*.bin
+*.h5
+*.pkl
+*.pt
+*.safetensors
+*.onnx
+model_cache/
+models/
+checkpoints/
+runs/
+~/.cache/huggingface/
+
+# ---- Jupyter notebooks ----
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---- IDE / Editor files ----
+.vscode/
+.idea/
+.spyproject
+.spyderproject
+.ropeproject
+
+# ---- macOS / Windows system files ----
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ---- Documentation builds ----
+docs/_build/
+site/
+
+# ---- Type checking / analysis ----
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.pyre/
+
+# ---- Misc temporary files ----
+*.bak
+*.old
+*.orig
+__pypackages__/
+__tests__/
+temp/
+tmp/
