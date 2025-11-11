@@ -1,120 +1,138 @@
-# Emotion Detection Web App
+## 😃 Emotion Detection Web App
+## 🧠 Overview
 
-## Overview
-**Emotion Detection Web App** is a Flask-based machine learning web application that detects human emotions from uploaded images. It provides a user-friendly interface for image uploads, emotion analysis, and visualization of prediction results with confidence levels.
-
-This project demonstrates how computer vision and deep learning can be integrated into an accessible web interface.
-
----
+Emotion Detection Web App is a Flask-based machine learning application that identifies human emotions from uploaded images.
+It combines computer vision, deep learning, and an intuitive web interface to provide real-time emotion analysis and visualization of prediction confidence levels.
 
 ## 🚀 Features
-- Upload an image via drag-and-drop or file picker.  
-- Real-time emotion prediction with confidence score.  
-- Displays prediction statistics:
-  - Total predictions made  
-  - Top detected emotions  
-  - Recent activity history  
-- Simple and responsive frontend.  
-- JSON API endpoint (`/predict`) for integration with other apps.
 
----
+- 🖼️ Upload images via drag-and-drop or file picker
+
+- ⚡ Real-time emotion prediction with confidence scores
+
+- 📊 Dashboard displaying:
+
+    - Total number of predictions made
+
+    - Top detected emotions
+
+    - Recent prediction history
+
+- 🌐 JSON API endpoint (/predict) for integration with other applications
+
+- 💻 Responsive, minimal frontend design
 
 ## 🧩 Tech Stack
-**Backend:** Python, Flask  
-**Frontend:** HTML, CSS, JavaScript (Vanilla)  
-**Machine Learning:** TensorFlow / PyTorch (for emotion model)  
-**Database:** SQLite (for logging predictions)
-
----
+|Category |	Technologies Used|
+|-----------|-------------------|
+|Backend |	Python, Flask|
+|Frontend |	HTML, CSS, JavaScript (Vanilla)|
+|Machine Learning |	TensorFlow / PyTorch|
+|Database |	SQLite|
 
 ## 🗂️ Project Structure
-emotion_detection_web_app/
+emotion_detection_web_app/\
 │
-├── app.py # Main Flask application
-├── static/
-│ ├── css/ # Custom CSS styles
-│ └── js/ # Frontend logic
-├── templates/
-│ ├── index.html # Main interface
-│ └── layout.html # Base template
-├── model_cache/ # Model weights and cache
-├── uploads/ # User uploads (excluded from git)
-├── logs/ # Logs and analytics
-├── requirements.txt
-├── .gitignore
+├── app.py                  # Main Flask application\
+├── static/\
+│   ├── css/                # Custom CSS styles\
+│   └── js/                 # Frontend logic\
+├── templates/\
+│   ├── index.html          # Main user interface\
+│   └── layout.html         # Base template\
+├── model_cache/            # Model weights and cache\
+├── uploads/                # Uploaded images (excluded from git)\
+├── logs/                   # Logs and analytics\
+├── requirements.txt\
+├── .gitignore\
 └── README.md
 
-yaml
-Copy code
-
----
-
 ## ⚙️ Installation & Setup
-
-### 1️⃣ Create and Activate a Virtual Environment
+1️⃣ Create and Activate a Virtual Environment
 ```bash
 python -m venv venv
-source venv/bin/activate        # macOS/Linux
-venv\Scripts\activate           # Windows
-2️⃣ Install Dependencies
-bash
-Copy code
-pip install -r requirements.txt
-3️⃣ Run the Flask App
-bash
-Copy code
-flask run
-Then open your browser at http://127.0.0.1:5000/.
+```
 
-🔍 API Endpoint
+Activate it:
+```bash
+macOS/Linux:
+
+source venv/bin/activate
+```
+
+```bash
+Windows:
+
+venv\Scripts\activate
+```
+
+2️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+3️⃣ Run the Application
+```bash
+flask run
+```
+
+Open your browser and visit:
+👉 http://127.0.0.1:5000/
+
+## 🔍 API Endpoint
+
 POST /predict
+
 Parameter	Type	Description
-file	image	Input image to analyze
+file	image	Image file to analyze
 
 Example Response:
 
-json
-Copy code
 {
   "predicted_emotion": "happy",
   "confidence": 0.91
 }
-📊 Statistics
-The dashboard provides:
 
-Total Predictions
+## 📊 Dashboard Insights
 
-Top 3 Emotions Detected
+The analytics section displays:
 
-Recent Activity (last 3 predictions)
+Total number of predictions
 
-Data is stored locally in a SQLite database.
+Top 3 most frequently detected emotions
 
-🔒 Security Notes
-Avoid committing model weights (*.bin, *.pt, *.h5, etc.) to public repositories.
+Recent activity (last 3 predictions)
 
-Don’t commit uploaded files or logs — they may contain personal data.
+All data is stored locally using SQLite.
 
-Check .env or config files for API keys before pushing to GitHub.
+## 🔒 Security Notes
 
-Use Git LFS if you need to track large model files.
+❌ Avoid committing large model files (*.h5, *.pt, *.bin, etc.) to public repositories
 
-🧠 Possible Improvements
-Add model selection or emotion intensity scale.
+🚫 Do not commit uploaded files or logs (may contain personal data)
 
-Integrate webcam capture for live emotion detection.
+🧩 Check for API keys or sensitive data before pushing to GitHub
 
-Visualize emotion confidence with charts.
+📦 Use Git LFS for tracking large model files if needed
 
-Containerize with Docker for smoother deployment.
+## 🌱 Possible Improvements
 
-Add multilingual emotion labels.
+🎛️ Add multiple model options or emotion intensity scales
 
-🧾 License
-This project is provided for educational and demonstration purposes.
-You are free to modify and extend it for your own research or learning.
+📸 Integrate webcam support for live emotion detection
 
-🙌 Credits
-Developed as a demonstration of computer vision and emotion recognition using deep learning.
-Inspired by open-source CNN-based emotion detection models.
-Developer is NAOMI CHIAMAKA EGBE 23CG034058
+📈 Visualize confidence levels using charts (e.g., Chart.js)
+
+🐳 Containerize with Docker for smoother deployment
+
+🌍 Add multilingual emotion labels
+
+## 🧾 License
+
+This project is open-source and provided for educational and demonstration purposes.
+You are free to modify and extend it for your own learning or research.
+
+## 🙌 Credits
+
+Developed by Naomi Chiamaka Egbe (23CG034058)
+A demonstration of deep learning–powered emotion recognition inspired by open-source CNN emotion models.
